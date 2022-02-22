@@ -45,7 +45,7 @@ Details about the training-validation-test splits used are also included in the 
 ## Model Training
 SaShiMi models rely on the same training framework as S4 (see the [README](../README.md) for details). To reproduce our results or train new SaShiMi models, you can use the following commands:
 ```bash
-# Train SaShiMi models on YouTubeMix, Beetnven and SC09
+# Train SaShiMi models on YouTubeMix, Beethoven and SC09
 python -m train experiment=sashimi-youtubemix wandb=null
 python -m train experiment=sashimi-beethoven wandb=null
 python -m train experiment=sashimi-sc09 wandb=null
@@ -160,7 +160,7 @@ To generate the automated metrics for the dataset, run the following command:
 ```bash
 python test_speech_commands.py resnext.pth
 ```
-If you didn't correctly place the `cache` folder under `state-spaces/sashimi/sc09_classifier`, this will be a little slow to run the first time, as it caches features and predictions (`train_probs.npy`, `test_probs.npy`, `train_activations.npy`, `test_activations.npy`) for the train and test sets under `sashimi/sc09_classifier/cache/`. Subsequent runs reuse this and are much faster.
+If you didn't correctly place the `cache` folder under `state-spaces/sashimi/sc09_classifier`, this will be a little slow to run the first time, as it caches features and predictions (`train_probs.npy`, `test_probs.npy`, `train_activations.npy`, `test_activations.npy`) for the train and test sets under `state-spaces/sashimi/sc09_classifier/cache/`. Subsequent runs reuse this and are much faster.
 
 #### Metrics on Autoregressive Models (SaShiMi, SampleRNN, WaveNet)
 For autoregressive models, we follow a threshold tuning procedure that is outlined in `Appendix C.3` of our paper. We generated `10240` samples for each model, using `5120` to tune thresholds for rejecting samples with the lowest and highest likelihoods, and evaluating the metrics on the `5120` samples that are held out. This is all taken care of automatically by the `test_speech_commands.py` script (with the `--threshold` flag passed in).
@@ -175,7 +175,7 @@ python test_speech_commands.py --sample-dir ../samples/sc09/10240-samplernn-3/ -
 # WaveNet (4.2M parameters)
 python test_speech_commands.py --sample-dir ../samples/sc09/10240-wavenet-1024/ --threshold resnext.pth
 ```
-> _Important:_ the commands above assume that samples inside the `sample-dir` directory are sorted by log-likelihoods (in increasing order). Our autoregressive generation script does this automatically, but if you generated samples manually through a separate script, you should sort them by log-likelihoods before running the above commands.
+> _Important:_ the commands above assume that samples inside the `sample-dir` directory are sorted by log-likelihoods (in increasing order), since the `--threshold` flag is being passed. Our autoregressive generation script does this automatically, but if you generated samples manually through a separate script, you should sort them by log-likelihoods before running the above commands. If you cannot sort the samples by log-likelihoods, you can simply omit the `--threshold` flag.
 
 #### Metrics on Non-Autoregressive Models (DiffWave variants, WaveGAN)
 For DiffWave models and WaveGAN (which don't provide exact likelihoods), we simply calculate metrics directly on `2048` samples.
