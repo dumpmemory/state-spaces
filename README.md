@@ -36,7 +36,7 @@ This repository provides implementations and experiments for the following paper
   - [Experiments](#s4-experiments)
   - [Training](#training)
   - [Models](#models)
-- [SaShiMi](sashimi/README)
+- [SaShiMi](sashimi/README.md#sashimi)
 - [Repository Structure](#overall-repository-structure)
 - [Citation](#citation)
 ## Setup
