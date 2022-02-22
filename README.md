@@ -7,7 +7,7 @@ This repository provides implementations and experiments for the following paper
 ![SaShiMi](assets/sashimi.png "SaShiMi Architecture")
 > **It's Raw! Audio Generation with State-Space Models**\
 > Karan Goel, Albert Gu, Chris Donahue, Christopher Ré\
-> Paper: https://arxiv.org/abs/xxxx.yyyyy
+> Paper: https://arxiv.org/abs/2202.09729
 
 ## S4 (ICLR 2022 Oral)
 
@@ -285,7 +285,7 @@ If you use this codebase, or otherwise found our work valuable, please cite:
 @article{goel2022sashimi,
   title={It's Raw! Audio Generation with State-Space Models},
   author={Goel, Karan and Gu, Albert and Donahue, Chris and R{\'e}, Christopher},
-  journal={arXiv preprint arXiv:xxxx.yyyyy},
+  journal={arXiv preprint arXiv:2202.09729},
   year={2022}
 }
 

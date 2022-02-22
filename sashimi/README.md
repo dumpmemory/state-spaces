@@ -3,7 +3,7 @@
 ![SaShiMi](../assets/sashimi.png "SaShiMi Architecture")
 > **It's Raw! Audio Generation with State-Space Models**\
 > Karan Goel, Albert Gu, Chris Donahue, Christopher Ré\
-> Paper: https://arxiv.org/abs/xxxx.yyyyy
+> Paper: https://arxiv.org/abs/2202.09729
 
 ## Table of Contents
 - [Datasets](#datasets)
@@ -28,6 +28,8 @@
     - [Music (YouTubeMix)](#music-youtubemix)
     - [Speech (SC09)](#speech-sc09)
     - [Posting HITs](#posting-hits)
+
+Samples of SaShiMi and baseline audio can be found [online](https://hazyresearch.stanford.edu/sashimi-examples).
 
 ## Datasets
 You can download the Beethoven, YouTubeMix and SC09 datasets from the following links on the Huggingface Hub. Details about the datasets can be found in the README files on the respective dataset pages.
